@@ -1,1 +1,1 @@
-# jQuery-quizz
+# js-quiz
