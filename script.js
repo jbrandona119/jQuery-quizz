@@ -8,7 +8,7 @@ const question = document.getElementById("question");
 
 const counter = document.getElementById("counter");
 
-const timer = document.getElementById("timeGauge");
+const timerGauge = document.getElementById("timeGauge");
 
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
@@ -37,7 +37,7 @@ let questions = [
         choiceC : "html.html",
         choiceD : "It doesn't matter",
         correct : "B"
-    }
+    },
     {
         question : "How do you write 'Hello World' in an alert box in JavaScript?",
         imgSrc : "img/picture3.png",
@@ -46,7 +46,7 @@ let questions = [
         choiceC : "alert('Hello World')",
         choiceD : "There is no alert box",
         correct : "C"
-    }
+    },
 
     {
         question : "How do you identify a class in CSS?",
@@ -56,7 +56,7 @@ let questions = [
         choiceC : "You don't use any unique identifier",
         choiceD : "You type a period before the name of the element",
         correct : "D"
-    }
+    },
 
     {
         question : "How do you identify a class in CSS?",
@@ -66,7 +66,7 @@ let questions = [
         choiceC : "You don't use any unique identifier",
         choiceD : "You type a period before the name of the element",
         correct : "D"
-    }
+    },
     {
         question : "How do you identify a class in CSS?",
         imgSrc : "img/picture6.png",
@@ -75,7 +75,7 @@ let questions = [
         choiceC : "You don't use any unique identifier",
         choiceD : "You type a period before the name of the element",
         correct : "D"
-    }
+    },
     {
         question : "How do you identify a class in CSS?",
         imgSrc : "img/picture7.png",
@@ -84,7 +84,7 @@ let questions = [
         choiceC : "You don't use any unique identifier",
         choiceD : "You type a period before the name of the element",
         correct : "D"
-    }
+    },
     {
         question : "How do you identify a class in CSS?",
         imgSrc : "img/picture8.png",
@@ -93,7 +93,7 @@ let questions = [
         choiceC : "You don't use any unique identifier",
         choiceD : "You type a period before the name of the element",
         correct : "D"
-    }
+    },
     {
         question : "How do you identify a class in CSS?",
         imgSrc : "img/picture9.png",
@@ -102,7 +102,7 @@ let questions = [
         choiceC : "You don't use any unique identifier",
         choiceD : "You type a period before the name of the element",
         correct : "D"
-    }
+    },
     {
         question : "How do you identify a class in CSS?",
         imgSrc : "img/picture10.png",
@@ -129,7 +129,6 @@ function renderQuestion() {
 
 start.addEventListener("click",startQuiz);
 
-let TIMER;
 // function to start quiz
 function startQuiz(){
     start.style.display = "none";
@@ -137,7 +136,7 @@ function startQuiz(){
     TIMER = setInterval(counterRender,1000);
     progressRender();
     questionRender();
-    quiz.style.display = "block";
+    quiz.style.display = "block"; 
 }
 //This function is for the progress bar to show the user how far along in the quiz they are
 
@@ -146,6 +145,19 @@ function progressRender() {
         progress.innerHTML += "<div class='prog' id=" +qIndex + "></div>";
     }
 }
+
+//score rendering function
+function scoreRender() {
+    scoreContainer.style.display = "block";
+    let scorePercent = Math.round(100 * score / questions.length);
+    let img = 
+            ( scorePercent >= 80 ) ? "img/5.png" :
+            ( scorePercent >= 60 ) ? "img/4.png" :
+            ( scorePercent >= 40 ) ? "img/3.png" :
+            ( scorePercent >= 20 ) ? "img/2.png" : "img/1.png";
+    scoreContainer.innerHTML = "<img src=" + img + "><p>" + scorePercent + "%</p>";
+}
+
 //This function will run when the answer the user selected is correct
 function answerIsCorrect() {
     document.getElementById(runningQuestionIndex).style.backgroundColor = "green";
@@ -166,7 +178,7 @@ let TIMER = setInterval(counterRender,1000);
 function counterRender(){
 if( count <= questionTime ) {
     counter.innerHTML = count;  
-    timeGauge.style.width = gaugeProgressUnit * count + "px";
+    timerGauge.style.width = gaugeProgressUnit * count + "px";
     count++;
 } else {
     count = 0;
