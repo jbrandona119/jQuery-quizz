@@ -169,14 +169,14 @@ function scoreRender() {
 }
 
 //This function will run when the answer the user selected is correct
-function answerIsCorrect() {
-    document.getElementById(runningQuestionIndex).style.backgroundColor = "green";
-}
+// function answerIsCorrect() {
+//     document.getElementById("#prog").style.backgroundColor = "green";
+// }
 
-//This function will run when the answer the user selected is incorrect
-function answerIsWrong() {
-    document.getElementById(runningQuestionIndex).style.backgroundColor = "red";
-}
+// //This function will run when the answer the user selected is incorrect
+// function answerIsWrong() {
+//     document.getElementById("prog").style.backgroundColor = "red";
+// }
 
 const questionTime = 10;
 const gaugeWidth = 150;
@@ -222,9 +222,9 @@ function checkAnswer(answer){
 }
 //answer is correct
 function answerIsCorrect() {
-    document.getElementById(runningQuestionIndex).style.backgroundColor = "#0f0";
+    document.getElementById("progress").style.backgroundColor = "#0f0";
 }
 //answer is incorrect
 function answerIsWrong() {
-    document.getElementById(runningQuestionIndex).style.backgroundColor = "#f00";
+    document.getElementById("progress").style.backgroundColor = "#f00";
 }

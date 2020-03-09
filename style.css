@@ -62,7 +62,8 @@ body{
     position: absolute;
     right : 0;
     top : 125px;
-    padding : 10px
+    padding : 10px;
+    font-size : small;
 }
 .choice{
     display: inline-block;
@@ -103,7 +104,7 @@ body{
     margin-left : 25px;
 }
 #progress{
-    width : 500px;
+    width : 50px;
     position: absolute;
     bottom : 0px;
     right : 0px;
@@ -146,3 +147,7 @@ body{
     font-weight: bold;
     text-align: center;
 }
+
+
+
+

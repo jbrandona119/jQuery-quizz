@@ -1,64 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  </head>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <div id="start">Start Quiz!</div>
-    <div id="quiz" style = "display : none;">
-        <div id="qImage"><img src="img.png"> </div>
-        <div id="question"><p> Question </p></div>
+    <div id="container">
+        <div id="start">Start Quiz!</div>
+        <div id="quiz" style="display: none">
+            <div id="question"></div>
+            <div id="qImg"></div>
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+            </div>
             <div id="timer">
-                <div id="counter">6</div>
-                <div id="bTimeGuage"></div>
+                <div id="counter"></div>
+                <div id="btimeGauge"></div>
                 <div id="timeGauge"></div>
             </div>
-            <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
-                <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
-                <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
-                <div class="choice" id="D" onclick="checkAnswer('D')">D</div>
-            </div>
-        <div id="progress"> <div class="prog"></div>
+            <div id="progress" class="prog"></div>
         </div>
-        <div id="scoreContainer" style = "display : none;">
-            <img src="smile.png"><p>50%</p>
-        </div>
-        <script src="./script.js"></script>
+        <div id="scoreContainer" style="display: none"></div>
     </div>
-
-
-
-
-
-
+    <script src="script.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
-
