@@ -160,10 +160,10 @@ function scoreRender() {
     scoreContainer.style.display = "block";
     const scorePercent = Math.round(100 * score/questions.length);
     let img = 
-            ( scorePercent >= 80 ) ? "img/5.png" :
-            ( scorePercent >= 60 ) ? "img/4.png" :
-            ( scorePercent >= 40 ) ? "img/3.png" :
-            ( scorePercent >= 20 ) ? "img/2.png" : "img/1.png";
+            ( scorePercent >= 80 ) ? img.src = "5.png" :
+            ( scorePercent >= 60 ) ? img.src = "5.png" :
+            ( scorePercent >= 40 ) ? img.src = "5.png" :
+            ( scorePercent >= 20 ) ? img.src = "5.png" : img.src = "1.png";
     scoreContainer.innerHTML = "<img src=" + img + ">";
     scoreContainer.innerHTML = "<p>" + scorePercent + "%</p>";
 }
